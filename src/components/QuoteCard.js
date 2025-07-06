@@ -1,5 +1,6 @@
 import './QuoteCard.css'
 import {useState} from 'react'
+import { FaQuoteLeft } from "react-icons/fa";
 
 function QuoteCard( {quote, onButtonClick} ) {
     // Not necessary, but useState fade effect
@@ -35,12 +36,12 @@ function QuoteCard( {quote, onButtonClick} ) {
                     </svg>
                     {quote.quote}
                 </p>
-                <p id='author' className='text-end  fs-5'>- {quote.author}</p>
+                <p id='author' className='text-end fs-5'>- {quote.author}</p>
             </div>
-            <div className='d-flex justify-content-between mt-5'>
+            <div className='d-flex justify-content-between align-items-center mt-5'>
                 <a
                     id='tweet-quote'
-                    className='btn btn-primary rounded-pill fs-5 d-flex align-items-center'
+                    className='btn btn-primary rounded-pill fs-5 d-flex align-items-center px-4'
                     href={`https://twitter.com/intent/tweet?text=${twitterText}`}
                     target='_blank'
                     rel='noopener noreferrer'
@@ -56,7 +57,7 @@ function QuoteCard( {quote, onButtonClick} ) {
                     </svg>
                     &nbsp;Share
                 </a>
-                <button id='new-quote' className='btn btn-primary rounded-pill fs-5' 
+                <button id='new-quote' className='btn btn-primary rounded-pill fs-5 px-4' 
                 onClick={() => {
                     onButtonClick();  // Call the function to get a new quote
                     toggleFade();     // Call the function to handle the fade effect
